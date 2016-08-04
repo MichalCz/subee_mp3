@@ -22,14 +22,22 @@ This script does the following:
 Warning... for some reasons this script also replaces "W:" in the begining of every file to "../". I'll remove that later. ;)
 
 Usage:
-    
-    bash /path/to/subee_mp3/cp_audio.sh <your_playlist>.m3u8 <target_dir>
-    
+
+    bash /path/to/subee_mp3/cp_audio.sh -f <your_playlist>.m3u8 -o <target_dir> -O -t <tempdir> -r <sed_path_replacement>
+
+Options:
+
+    -f | --file         Playlist file
+    -r | --replace      Path part replacement (argument to sed -e)
+    -t | --tempdir      Temporary dir
+    -o | --output       Output dir
+    -O | --overwrite    Overwrite files
+
 ### Samples:
 
 Multiple playlists:
 
-    for I in `ls *.m3u8`; do echo bash cp_audio.sh $I /media/subaru_usb; done
+    for I in `ls *.m3u8`; do echo bash cp_audio.sh -f $I /media/subaru_usb <your opts>; done
 
 # Future plans
 
